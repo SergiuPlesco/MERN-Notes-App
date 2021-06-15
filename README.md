@@ -9,6 +9,7 @@
 4. change proxy port in frontend/package.json
 
 ## config.env
+#### add config.env file in root directory with:
 1. PORT = Your port
 2. dbURL = MongoDB URL
 3. JWT_SECRET = Your secret
