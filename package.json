@@ -11,7 +11,8 @@
 	"scripts": {
 		"server": "nodemon index --prefix backend",
 		"frontend": "npm start --prefix frontend",
-		"start": "concurrently \"npm run server\" \"npm run frontend\""
+		"start": "concurrently \"npm run server\" \"npm run frontend\"",
+		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm istall --prefix backend && npm run build --prefix frontend"
 	},
 	"keywords": [],
 	"author": "",
