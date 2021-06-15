@@ -12,6 +12,7 @@
 	},
 	"devDependencies": {},
 	"scripts": {
+		"deployment-server": "node index --prefix backend",
 		"server": "nodemon index --prefix backend",
 		"frontend": "npm start --prefix frontend",
 		"start": "concurrently \"npm run server\" \"npm run frontend\"",
