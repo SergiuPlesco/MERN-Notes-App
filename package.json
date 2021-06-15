@@ -1,0 +1,19 @@
+{
+	"name": "mern",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"dependencies": {
+		"concurrently": "^6.1.0",
+		"dotenv": "^10.0.0"
+	},
+	"devDependencies": {},
+	"scripts": {
+		"server": "nodemon index --prefix backend",
+		"frontend": "npm start --prefix frontend",
+		"start": "concurrently \"npm run server\" \"npm run frontend\""
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}
