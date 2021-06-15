@@ -1,1 +1,1 @@
-web: npm /backend/index.js
+web: node /backend/index.js
