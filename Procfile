@@ -1,1 +1,1 @@
-web: node deployment-server
+web: node ./backend/index.js
