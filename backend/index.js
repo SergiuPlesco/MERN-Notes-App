@@ -42,7 +42,7 @@ console.log("static path", path.join(__dirname, "../", "frontend", "build"));
 
 app.get("*", (req, res) => {
 	// res.sendFile(path.join(__dirname, "../", "frontend", "build", "index.html"));
-	res.sendFile(path.resolve("home.html"));
+	res.sendFile(path.resolve("frontend", "build", "index.html"));
 	// res.send("hello from backend");
 });
 console.log("get all path", path.resolve("home.html"));
