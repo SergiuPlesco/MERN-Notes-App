@@ -38,7 +38,7 @@ app.use(errorHandler);
 
 // if (process.env.NODE_ENV === "production") {
 app.use(express.static(path.resolve("frontend/build")));
-// console.log("static path", path.resolve("frontend/build"));
+console.log("static path", path.resolve("frontend/build"));
 
 app.get("*", (req, res) => {
 	res.sendFile(path.resolve("frontend", "build", "index.html"));
