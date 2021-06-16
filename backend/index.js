@@ -1,5 +1,5 @@
-import { createRequire } from "module";
-const require = createRequire(import.meta.url);
+// import { createRequire } from "module";
+// const require = createRequire(import.meta.url);
 import dotenv from "dotenv";
 dotenv.config({ path: "./config.env" });
 
@@ -34,10 +34,10 @@ app.use((req, res) => {
 app.use(errorHandler);
 
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.dirname("/frontend/build")));
+	app.use(express.static(path.dirname("../frontend/build")));
 
 	app.get("*", (req, res) => {
-		res.sendFile(path.dirname("/frontend", "build", "index.html"));
+		res.sendFile(path.dirname("../frontend", "build", "index.html"));
 	});
 } else {
 	app.get("/", (req, res) => {
