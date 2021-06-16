@@ -37,7 +37,7 @@ app.use(errorHandler);
 app.use(express.static(path.dirname("/frontend/build")));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.dirname("frontend", "build", "index.html"));
+	res.sendFile(path.dirname("/frontend", "build", "index.html"));
 });
 // } else {
 // 	app.get("/", (req, res) => {
