@@ -5,7 +5,10 @@ dotenv.config({ path: "./config.env" });
 
 import express from "express";
 // const path = require("path");
-import path from "path";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import NoteRoutes from "./routes/note.routes.js";
 import AuthRoutes from "./routes/auth.routes.js";
@@ -34,8 +37,8 @@ app.use((req, res) => {
 app.use(errorHandler);
 
 // if (process.env.NODE_ENV === "production") {
-app.use(express.static(path.resolve("frontend/build")));
-console.log("static path", path.resolve("frontend/build"));
+// app.use(express.static(path.resolve("frontend/build")));
+// console.log("static path", path.resolve("frontend/build"));
 
 app.get("*", (req, res) => {
 	res.sendFile(path.resolve("frontend", "build", "index.html"));
