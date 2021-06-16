@@ -37,7 +37,7 @@ app.use((req, res) => {
 // Error Handler (Should be lat piece of middleware)
 app.use(errorHandler);
 
-app.use(serveStatic(path.resolve("frontend", "build")));
+app.use(serveStatic(path.resolve("frontend", "public")));
 console.log("static path", path.join(__dirname, "../", "frontend", "build"));
 
 app.get("*", (req, res) => {
