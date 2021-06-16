@@ -18,7 +18,7 @@
 		"server": "npx nodemon index --prefix backend",
 		"frontend": "npm start --prefix frontend",
 		"start:dev": "concurrently \"npm run server\" \"npm run frontend\"",
-		"start": "npm run server && npm run frontend",
+		"start": "npm run server",
 		"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend"
 	},
 	"keywords": [],
