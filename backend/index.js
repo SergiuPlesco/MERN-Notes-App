@@ -31,7 +31,7 @@ app.use(AuthRoutes);
 app.use(NoteRoutes);
 
 app.use((req, res) => {
-	res.status(404).send("page not found");
+	res.status(404).send("ppppage not found");
 });
 
 // Error Handler (Should be lat piece of middleware)
