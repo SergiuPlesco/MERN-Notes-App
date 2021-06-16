@@ -2,12 +2,7 @@ import dotenv from "dotenv";
 dotenv.config({ path: "./config.env" });
 
 import express from "express";
-import { fileURLToPath } from "url";
-import path from "path";
-import { dirname } from "path";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const path = require("path");
 
 import NoteRoutes from "./routes/note.routes.js";
 import AuthRoutes from "./routes/auth.routes.js";
