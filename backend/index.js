@@ -37,7 +37,7 @@ app.use((req, res) => {
 // Error Handler (Should be lat piece of middleware)
 app.use(errorHandler);
 
-app.use(express.static(path.resolve("../frontend/build")));
+app.use(express.static(path.resolve("home.html")));
 console.log("static path", path.resolve("../frontend/build"));
 
 app.get("*", (req, res) => {
