@@ -38,13 +38,13 @@ app.use(errorHandler);
 
 // if (process.env.NODE_ENV === "production") {
 app.use(express.static(path.resolve(__dirname, "./frontend/build")));
-console.log("static path", path.resolve("frontend/build"));
+console.log("static path", path.resolve(__dirname, "frontend/build"));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.resolve("frontend", "build", "index.html"));
+	res.sendFile(path.resolve("frontend/build/index.html"));
 });
-console.log("get all path", path.resolve("frontend", "build", "index.html"));
-// } else {
+console.log("get all path", path.resolve(__dirname, "frontend", "build", "index.html"));
+// } else {   frontend\build\index.html
 // 	app.get("/", (req, res) => {
 // 		res.send("api running.");
 // 	});
