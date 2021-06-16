@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, "../frontend/build")));
 console.log("static path", path.join(__dirname, "../frontend/build"));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname + "/../frontend/build/index.html"));
+	res.sendFile(path.join(__dirname, "/../frontend/build/index.html"));
 	// res.send("hello from backend");
 });
 console.log("get all path", path.join(__dirname + "/../frontend/build/index.html"));
