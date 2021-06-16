@@ -37,7 +37,7 @@ app.use((req, res) => {
 // Error Handler (Should be lat piece of middleware)
 app.use(errorHandler);
 
-app.use(express.static(path.join(__dirname, "../", "frontend", "build")));
+app.use("/", express.static(path.join(__dirname, "../frontend/build")));
 console.log("static path", path.join(__dirname, "../", "frontend", "build"));
 
 app.get("*", (req, res) => {
