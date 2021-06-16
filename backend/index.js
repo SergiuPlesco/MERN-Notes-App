@@ -36,19 +36,19 @@ app.use((req, res) => {
 // Error Handler (Should be lat piece of middleware)
 app.use(errorHandler);
 
-// if (process.env.NODE_ENV === "production") {
-app.use(express.static(path.resolve("frontend/build")));
-console.log("static path", path.resolve("frontend/build"));
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.resolve("frontend/build")));
+	console.log("static path", path.resolve("frontend/build"));
 
-app.get("*", (req, res) => {
-	res.sendFile(path.resolve("frontend", "build", "index.html"));
-});
-console.log("get all path", path.resolve("frontend", "build", "index.html"));
-// } else {
-// 	app.get("/", (req, res) => {
-// 		res.send("api running.");
-// 	});
-// }
+	app.get("*", (req, res) => {
+		res.sendFile(path.resolve("frontend", "build", "index.html"));
+	});
+	console.log("get all path", path.resolve("frontend", "build", "index.html"));
+} else {
+	app.get("/", (req, res) => {
+		res.send("api running.");
+	});
+}
 
 app.listen(process.env.PORT || 3001, () => {
 	console.log(`App listening on PORT: ${PORT}`);
