@@ -5,10 +5,10 @@ dotenv.config({ path: "./config.env" });
 
 import express from "express";
 // const path = require("path");
-import path, { dirname } from "path";
-import { fileURLToPath } from "url";
+import path from "path";
+// import { fileURLToPath } from "url";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
+// const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import serveStatic from "serve-static";
 import NoteRoutes from "./routes/note.routes.js";
@@ -37,7 +37,7 @@ app.use((req, res) => {
 // Error Handler (Should be lat piece of middleware)
 app.use(errorHandler);
 
-app.use("/", express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 console.log("static path", path.join(__dirname, "../", "frontend", "build"));
 
 app.get("*", (req, res) => {
