@@ -34,10 +34,10 @@ app.use((req, res) => {
 app.use(errorHandler);
 
 if (process.env.NODE_ENV === "production") {
-	app.use(express.static(path.dirname("/frontend/build")));
+	app.use(express.static(path.resolve("/frontend/build")));
 
 	app.get("*", (req, res) => {
-		res.sendFile(path.dirname("frontend", "build", "index.html"));
+		res.sendFile(path.resolve("frontend", "build", "index.html"));
 	});
 } else {
 	app.get("/", (req, res) => {
@@ -45,6 +45,6 @@ if (process.env.NODE_ENV === "production") {
 	});
 }
 
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 3001, () => {
 	console.log(`App listening on PORT: ${PORT}`);
 });
