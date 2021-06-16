@@ -37,13 +37,11 @@ app.use((req, res) => {
 // Error Handler (Should be lat piece of middleware)
 app.use(errorHandler);
 
-app.use(express.static(path.resolve("home.html")));
+app.use(express.static(path.resolve("../frontend/build")));
 console.log("static path", path.resolve("../frontend/build"));
 
 app.get("*", (req, res) => {
-	// res.sendFile(path.join(__dirname, "../", "frontend", "build", "index.html"));
-	res.sendFile(path.resolve("home.html"));
-	// res.send("hello from backend");
+	res.sendFile(path.resolve("../frontend/build/index.html"));
 });
 console.log("get all path", path.resolve("home.html"));
 
