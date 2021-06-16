@@ -14,7 +14,7 @@ import serveStatic from "serve-static";
 import NoteRoutes from "./routes/note.routes.js";
 import AuthRoutes from "./routes/auth.routes.js";
 
-import connectDB from "../backend/config/db.config.js";
+import connectDB from "./config/db.config.js";
 import errorHandler from "./middleware/error.js";
 import cors from "cors";
 const app = express();
@@ -37,12 +37,12 @@ app.use((req, res) => {
 // Error Handler (Should be lat piece of middleware)
 app.use(errorHandler);
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
-console.log("static path", path.join(__dirname, "../", "frontend", "build"));
+app.use(express.static(path.resolve("../frontend/build")));
+console.log("static path", path.resolve("../frontend/build"));
 
 app.get("*", (req, res) => {
 	// res.sendFile(path.join(__dirname, "../", "frontend", "build", "index.html"));
-	res.sendFile(path.resolve("frontend", "build", "index.html"));
+	res.sendFile(path.resolve("../", "frontend", "build", "index.html"));
 	// res.send("hello from backend");
 });
 console.log("get all path", path.resolve("home.html"));
