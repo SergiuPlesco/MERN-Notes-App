@@ -33,17 +33,17 @@ app.use((req, res) => {
 // Error Handler (Should be lat piece of middleware)
 app.use(errorHandler);
 
-// if (process.env.NODE_ENV === "production") {
-app.use(express.static(path.dirname("/frontend/build")));
+if (process.env.NODE_ENV === "production") {
+	app.use(express.static(path.dirname("/frontend/build")));
 
-app.get("*", (req, res) => {
-	res.sendFile(path.dirname("/frontend", "build", "index.html"));
-});
-// } else {
-// 	app.get("/", (req, res) => {
-// 		res.send("api running...");
-// 	});
-// }
+	app.get("*", (req, res) => {
+		res.sendFile(path.dirname("/frontend", "build", "index.html"));
+	});
+} else {
+	app.get("/", (req, res) => {
+		res.send("api running...");
+	});
+}
 
 app.listen(PORT, () => {
 	console.log(`App listening on PORT: ${PORT}`);
