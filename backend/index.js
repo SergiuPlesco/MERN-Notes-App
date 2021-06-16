@@ -5,10 +5,10 @@ dotenv.config({ path: "./config.env" });
 
 import express from "express";
 // const path = require("path");
-import path from "path";
-// import { fileURLToPath } from "url";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 
-// const __dirname = dirname(fileURLToPath(import.meta.url));
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 import serveStatic from "serve-static";
 import NoteRoutes from "./routes/note.routes.js";
@@ -34,14 +34,14 @@ app.use(NoteRoutes);
 // 	res.status(404).send("ppppage not found");
 // });
 
-// Error Handler (Should be lat piece of middleware)
+// Error Handler (Should be last piece of middleware)
 app.use(errorHandler);
 
 app.use(express.static(path.resolve("../frontend/build")));
 console.log("static path", path.resolve("../frontend/build"));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.resolve("../", "frontend", "build", "index.html"));
+	res.sendFile(path.join(__dirname, "../", "frontend", "build", "index.html"));
 });
 console.log("get all path", path.resolve("home.html"));
 
