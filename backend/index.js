@@ -1,11 +1,11 @@
-// import { createRequire } from "module";
-// const require = createRequire(import.meta.url);
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 import dotenv from "dotenv";
 dotenv.config({ path: "./config.env" });
 
 import express from "express";
-// const path = require("path");
-import path from "path";
+const path = require("path");
+// import path from "path";
 
 import NoteRoutes from "./routes/note.routes.js";
 import AuthRoutes from "./routes/auth.routes.js";
