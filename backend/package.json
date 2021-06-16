@@ -19,6 +19,7 @@
 		"nodemailer": "^6.6.1",
 		"nodemon": "^2.0.7",
 		"path": "^0.12.7",
+		"serve-static": "^1.14.1",
 		"url": "^0.11.0"
 	}
 }

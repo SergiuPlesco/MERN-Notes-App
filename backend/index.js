@@ -10,6 +10,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
+import serveStatic from "serve-static";
 import NoteRoutes from "./routes/note.routes.js";
 import AuthRoutes from "./routes/auth.routes.js";
 
@@ -37,7 +38,7 @@ app.use((req, res) => {
 app.use(errorHandler);
 
 // if (process.env.NODE_ENV === "production") {
-app.use(express.static(path.join(__dirname, "../", "frontend", "build")));
+app.use(serveStatic(path.join(__dirname, "../", "frontend", "build")));
 console.log("static path", path.join(__dirname, "../", "frontend", "build"));
 
 app.get("*", (req, res) => {
