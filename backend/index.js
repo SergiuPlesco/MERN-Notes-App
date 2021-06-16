@@ -37,7 +37,7 @@ app.use((req, res) => {
 app.use(errorHandler);
 
 // if (process.env.NODE_ENV === "production") {
-// app.use(express.static(path.resolve("frontend/build")));
+app.use(express.static(path.resolve("frontend/build")));
 // console.log("static path", path.resolve("frontend/build"));
 
 app.get("*", (req, res) => {
