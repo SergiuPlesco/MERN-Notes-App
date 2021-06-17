@@ -33,7 +33,7 @@ const loginUser = createAsyncThunk(
 		};
 
 		try {
-			const { data } = await axios.post("http://localhost:3001/login", { email, password }, config);
+			const { data } = await axios.post("/login", { email, password }, config);
 			localStorage.setItem("authToken", data.token);
 			return data.user;
 		} catch (error) {
