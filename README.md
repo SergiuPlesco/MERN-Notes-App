@@ -20,4 +20,4 @@
 8. EMAIL_FROM = SendGrid/NodeMailer instructions
 
 ## Run
-npm start
+npm run dev
