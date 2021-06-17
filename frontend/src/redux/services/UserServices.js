@@ -10,11 +10,7 @@ const registerUser = createAsyncThunk(
 			},
 		};
 		try {
-			const { data } = await axios.post(
-				"http://localhost:3001/register",
-				{ username, email, password },
-				config
-			);
+			const { data } = await axios.post("/register", { username, email, password }, config);
 			localStorage.setItem("authToken", data.token);
 			return data.user;
 		} catch (error) {
