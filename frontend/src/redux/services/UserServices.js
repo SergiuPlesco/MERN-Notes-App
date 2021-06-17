@@ -11,7 +11,7 @@ const registerUser = createAsyncThunk(
 		};
 		try {
 			const { data } = await axios.post("/register", { username, email, password }, config);
-			localStorage.setItem("authToken", data.token);
+			// localStorage.setItem("authToken", data.token);
 			return data.user;
 		} catch (error) {
 			return rejectWithValue(error.response.data.error);

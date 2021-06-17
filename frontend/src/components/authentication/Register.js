@@ -37,9 +37,8 @@ const Register = () => {
 				if (response.meta.requestStatus === "rejected") {
 					throw Error(response.payload);
 				} else if (response.meta.requestStatus === "fulfilled") {
-					history.push(`/`);
+					history.push(`/login`);
 				}
-				// history.push("/");
 			})
 			.catch((error) => {
 				setError(error.message);
