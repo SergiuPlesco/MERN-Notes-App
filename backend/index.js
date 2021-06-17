@@ -41,9 +41,9 @@ app.use(express.static(path.resolve("../frontend/build")));
 console.log("static path", path.resolve("../frontend/build"));
 
 app.get("*", (req, res) => {
-	res.sendFile(path.join(__dirname, "home.html"));
+	res.sendFile(path.join(__dirname, "index.html"));
 });
-console.log("get all path", path.resolve("home.html"));
+console.log("get all path", path.resolve("index.html"));
 
 app.listen(process.env.PORT || 3001, () => {
 	console.log(`App listening on PORT: ${PORT}`);
