@@ -2,6 +2,10 @@
 * Create, read, update, delete simple notes.
 * Register/Log in/reset Password
 
+## Project deployed on heroky
+- Sign up is necessary to see how the app is working
+- https://auth-note-app.herokuapp.com/
+
 ## Installation
 1. npm install
 2. cd frontent/ npm install
